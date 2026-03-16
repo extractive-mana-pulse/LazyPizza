@@ -2,7 +2,6 @@ package com.seno.products.presentation.allproducts
 
 import android.widget.Toast
 import androidx.compose.foundation.lazy.LazyListState
-import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
