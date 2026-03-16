@@ -1,4 +1,4 @@
-package com.seno.auth.data.network
+ package com.seno.auth.data.network
 
 import com.seno.auth.data.BuildConfig
 import com.seno.core.domain.DataError
