@@ -25,9 +25,9 @@ import androidx.compose.ui.unit.dp
 import com.seno.cart.presentation.R
 import com.seno.core.presentation.theme.LazyPizzaTheme
 import com.seno.core.presentation.theme.body_3_regular
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.label_2_medium
 import com.seno.core.presentation.theme.label_2_semiBold
-import com.seno.core.presentation.theme.textSecondary
 import com.seno.core.presentation.theme.title_1_medium
 import com.seno.core.presentation.theme.title_3
 
@@ -54,7 +54,7 @@ internal fun OrderSuccess(
         Text(
             text = stringResource(R.string.place_order_success_subtitle),
             style = body_3_regular,
-            color = textSecondary,
+            color = MaterialTheme.customColors.textSecondary,
             textAlign = TextAlign.Center,
         )
 
@@ -62,7 +62,7 @@ internal fun OrderSuccess(
             modifier = Modifier
                 .border(
                     width = 1.dp,
-                    color = MaterialTheme.colorScheme.outline,
+                    color = MaterialTheme.customColors.outline,
                     shape = RoundedCornerShape(12.dp),
                 ).padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(6.dp, Alignment.CenterVertically),
@@ -76,7 +76,7 @@ internal fun OrderSuccess(
                 Text(
                     text = stringResource(R.string.place_order_number),
                     style = label_2_medium,
-                    color = textSecondary,
+                    color = MaterialTheme.customColors.textSecondary,
                 )
                 Text(
                     text = orderNumber,
@@ -91,7 +91,7 @@ internal fun OrderSuccess(
                 Text(
                     text = stringResource(R.string.place_order_pickup),
                     style = label_2_medium,
-                    color = textSecondary,
+                    color = MaterialTheme.customColors.textSecondary,
                 )
                 Text(
                     text = pickupTime,
@@ -106,7 +106,7 @@ internal fun OrderSuccess(
             Text(
                 text = stringResource(R.string.back_to_menu),
                 style = title_3,
-                color = MaterialTheme.colorScheme.primary,
+                color = MaterialTheme.customColors.primary,
                 textAlign = TextAlign.Center,
             )
         }

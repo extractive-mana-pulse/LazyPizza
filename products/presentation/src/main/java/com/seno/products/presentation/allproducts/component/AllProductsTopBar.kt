@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -22,6 +23,7 @@ import com.seno.core.presentation.components.bar.LazyPizzaTopAppBar
 import com.seno.core.presentation.theme.LazyPizzaTheme
 import com.seno.core.presentation.theme.body_1_regular
 import com.seno.core.presentation.theme.body_3_body
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.textPrimary
 import com.seno.core.presentation.theme.textSecondary
 
@@ -75,7 +77,7 @@ fun AllProductsTopBar(
                 Text(
                     text = "+1 (555) 321-7890",
                     style = body_1_regular,
-                    color = textPrimary,
+                    color = MaterialTheme.customColors.textPrimary,
                 )
 
                 Spacer(modifier = Modifier.size(16.dp))

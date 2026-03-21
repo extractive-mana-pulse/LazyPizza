@@ -29,7 +29,7 @@ androidDesugarJdkLibs = "2.1.5"
 
 # Project versions
 projectAppId = "com.seno.lazypizza"
-projectVersionName = "1.0.1"
+projectVersionName = "1.1.0"
 projectVersionCode = "1"
 projectMinSdkVersion = "24"
 projectTargetSdkVersion = "36"

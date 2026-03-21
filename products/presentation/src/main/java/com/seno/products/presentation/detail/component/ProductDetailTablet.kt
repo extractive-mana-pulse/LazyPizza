@@ -40,9 +40,8 @@ import com.seno.core.presentation.components.button.LazyPizzaPrimaryButton
 import com.seno.core.presentation.components.card.ToppingCard
 import com.seno.core.presentation.theme.LazyPizzaTheme
 import com.seno.core.presentation.theme.body_3_regular
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.label_2_semiBold
-import com.seno.core.presentation.theme.textPrimary
-import com.seno.core.presentation.theme.textSecondary
 import com.seno.core.presentation.theme.title_1_semiBold
 import com.seno.core.presentation.utils.DeviceConfiguration
 import com.seno.core.presentation.utils.applyIf
@@ -63,7 +62,7 @@ internal fun ProductDetailTablet(
         modifier =
             modifier
                 .fillMaxSize()
-                .background(MaterialTheme.colorScheme.background),
+                .background(MaterialTheme.customColors.background),
     ) {
         Column(
             modifier =
@@ -82,7 +81,7 @@ internal fun ProductDetailTablet(
                                 bottomEnd = 16.dp,
                             ),
                         ).background(
-                            color = MaterialTheme.colorScheme.background,
+                            color = MaterialTheme.customColors.background,
                         ),
                 contentAlignment = Alignment.Center,
             ) {
@@ -109,7 +108,7 @@ internal fun ProductDetailTablet(
             Text(
                 text = state.selectedPizza?.name.orEmpty(),
                 style = title_1_semiBold,
-                color = textPrimary,
+                color = MaterialTheme.customColors.textPrimary,
             )
 
             Text(
@@ -119,7 +118,7 @@ internal fun ProductDetailTablet(
                         .orEmpty()
                         .joinToString(", "),
                 style = body_3_regular,
-                color = textSecondary,
+                color = MaterialTheme.customColors.textSecondary,
             )
         }
 
@@ -150,7 +149,7 @@ internal fun ProductDetailTablet(
                         .padding(top = 8.dp),
                 text = stringResource(com.seno.products.presentation.R.string.add_extra_toppings),
                 style = label_2_semiBold,
-                color = textSecondary,
+                color = MaterialTheme.customColors.textSecondary,
             )
 
             LazyVerticalGrid(

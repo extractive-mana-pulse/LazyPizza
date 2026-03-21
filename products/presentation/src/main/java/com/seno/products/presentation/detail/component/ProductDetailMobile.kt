@@ -28,6 +28,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalContext
@@ -44,6 +45,7 @@ import com.seno.core.presentation.components.card.ToppingCard
 import com.seno.core.presentation.theme.LazyPizzaTheme
 import com.seno.core.presentation.theme.background
 import com.seno.core.presentation.theme.body_3_regular
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.label_2_semiBold
 import com.seno.core.presentation.theme.textPrimary
 import com.seno.core.presentation.theme.textSecondary
@@ -76,7 +78,7 @@ internal fun ProductDetailMobile(
                             bottomEnd = 16.dp,
                         ),
                     ).background(
-                        color = MaterialTheme.colorScheme.background,
+                        color = MaterialTheme.customColors.background,
                     ),
             contentAlignment = Alignment.Center,
         ) {
@@ -105,7 +107,7 @@ internal fun ProductDetailMobile(
                     .fillMaxWidth()
                     .drawBehind {
                         drawRect(
-                            color = background,
+                            color = Color.Unspecified,
                             size =
                                 Size(
                                     width = 100.dp.toPx(),
@@ -122,7 +124,7 @@ internal fun ProductDetailMobile(
             Text(
                 text = state.selectedPizza?.name.orEmpty(),
                 style = title_1_semiBold,
-                color = textPrimary,
+                color = MaterialTheme.customColors.textPrimary,
             )
 
             Text(
@@ -132,7 +134,7 @@ internal fun ProductDetailMobile(
                         .orEmpty()
                         .joinToString(", "),
                 style = body_3_regular,
-                color = textSecondary,
+                color = MaterialTheme.customColors.textSecondary,
             )
 
             Text(
@@ -141,7 +143,7 @@ internal fun ProductDetailMobile(
                         .padding(top = 8.dp),
                 text = stringResource(com.seno.products.presentation.R.string.add_extra_toppings),
                 style = label_2_semiBold,
-                color = textSecondary,
+                color = MaterialTheme.customColors.textSecondary,
             )
 
             Box(

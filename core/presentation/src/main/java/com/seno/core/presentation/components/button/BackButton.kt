@@ -6,11 +6,13 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.textSecondary
 import com.seno.core.presentation.theme.textSecondary8
 
@@ -21,7 +23,7 @@ fun BackButton(onBackClick: () -> Unit) {
             Modifier
                 .size(32.dp),
         shape = CircleShape,
-        color = textSecondary8.copy(alpha = 0.08f),
+        color = MaterialTheme.customColors.textSecondary8,
         onClick = { onBackClick() },
     ) {
         Icon(

@@ -26,3 +26,23 @@ val primaryGradient = Brush.linearGradient(
 )
 val ColorScheme.success: Color
     get() = Color(0xFF2F9E5A)
+
+val textPrimaryDark = Color(0xFFE8F1F8)
+val textSecondaryDark = Color(0xFF8DA5B4)
+val textSecondary8Dark = Color(0x148DA5B4)
+val textOnPrimaryDark = Color(0xFFFFFFFF)
+val backgroundDark = Color(0xFF0D1B24)
+val surfaceHigherDark = Color(0xFF152130)
+val surfaceHighestDark = Color(0xFF1C2D3A)
+val outlineDark = Color(0xFF253545)
+val outline50Dark = Color(0x80253545)
+val primaryDark = Color(0xFFF36B50)
+val primary8Dark = Color(0x1FF36B50)
+val primaryGradientDark = Brush.linearGradient(
+    listOf(
+        Color(0xFFF36B50),
+        Color(0xFFF9966F),
+    ),
+)
+val ColorScheme.successDark: Color
+    get() = Color(0xFF3DB870)

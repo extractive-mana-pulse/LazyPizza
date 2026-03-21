@@ -29,6 +29,7 @@ import com.seno.core.presentation.R
 import com.seno.core.presentation.theme.LazyPizzaTheme
 import com.seno.core.presentation.theme.body_1_medium
 import com.seno.core.presentation.theme.body_3_regular
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.textPrimary
 import com.seno.core.presentation.theme.textSecondary
 import com.seno.core.presentation.theme.title_1_semiBold
@@ -91,14 +92,14 @@ fun PizzaCard(
                 text = pizzaName,
                 style =
                     body_1_medium.copy(
-                        color = textPrimary,
+                        color = MaterialTheme.customColors.textPrimary,
                     ),
             )
             Text(
                 text = pizzaDescription,
                 style =
                     body_3_regular.copy(
-                        color = textSecondary,
+                        color = MaterialTheme.customColors.textSecondary,
                     ),
             )
             Spacer(modifier = Modifier.height(8.dp))
@@ -106,7 +107,7 @@ fun PizzaCard(
                 text = "$${pizzaPrice.formatToPrice()}",
                 style =
                     title_1_semiBold.copy(
-                        color = textPrimary,
+                        color = MaterialTheme.customColors.textPrimary,
                     ),
             )
         }

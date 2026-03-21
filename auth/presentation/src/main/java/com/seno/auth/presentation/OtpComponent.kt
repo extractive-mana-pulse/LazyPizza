@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -30,10 +31,7 @@ import androidx.compose.ui.unit.dp
 import com.seno.core.presentation.theme.LazyPizzaTheme
 import com.seno.core.presentation.theme.body_2_regular
 import com.seno.core.presentation.theme.body_4_regular
-import com.seno.core.presentation.theme.primary
-import com.seno.core.presentation.theme.surfaceHighest
-import com.seno.core.presentation.theme.textPrimary
-import com.seno.core.presentation.theme.textSecondary
+import com.seno.core.presentation.theme.customColors
 
 private const val OTP_LENGTH = 6
 
@@ -94,11 +92,11 @@ fun OtpComponent(
                                     },
                                 ).height(48.dp)
                                 .background(
-                                    color = if (error != null) Color.Transparent else surfaceHighest,
+                                    color = if (error != null) Color.Transparent else MaterialTheme.customColors.surfaceHighest,
                                     shape = RoundedCornerShape(16.dp),
                                 ).border(
                                     width = 1.dp,
-                                    color = if (error != null) primary else Color.Transparent,
+                                    color = if (error != null) MaterialTheme.customColors.primary else Color.Transparent,
                                     shape = RoundedCornerShape(16.dp),
                                 ),
                             contentAlignment = Alignment.Center,
@@ -107,14 +105,14 @@ fun OtpComponent(
                                 Text(
                                     text = char,
                                     style = body_2_regular,
-                                    color = textPrimary,
+                                    color = MaterialTheme.customColors.textPrimary,
                                     textAlign = TextAlign.Center,
                                 )
                             } else {
                                 Text(
                                     text = "0",
                                     style = body_2_regular,
-                                    color = textSecondary,
+                                    color = MaterialTheme.customColors.textSecondary,
                                     textAlign = TextAlign.Center,
                                 )
                             }
@@ -126,7 +124,7 @@ fun OtpComponent(
         error?.let {
             Text(
                 text = it,
-                style = body_4_regular.copy(color = primary),
+                style = body_4_regular.copy(color = MaterialTheme.customColors.primary),
             )
         }
     }

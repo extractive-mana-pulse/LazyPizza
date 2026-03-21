@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -16,6 +17,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.seno.core.presentation.components.button.LazyPizzaPrimaryButton
 import com.seno.core.presentation.theme.body_3_regular
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.textPrimary
 import com.seno.core.presentation.theme.textSecondary
 import com.seno.core.presentation.theme.title_1_medium
@@ -36,7 +38,7 @@ fun EmptyCartComponent(
             text = "Your cart is empty",
             style =
                 title_1_medium.copy(
-                    color = textPrimary,
+                    color = MaterialTheme.customColors.textPrimary,
                 ),
         )
 
@@ -46,7 +48,7 @@ fun EmptyCartComponent(
             text = "Head back to the menu and grab a pizza you love",
             style =
                 body_3_regular.copy(
-                    color = textSecondary,
+                    color = MaterialTheme.customColors.textSecondary,
                 ),
         )
 

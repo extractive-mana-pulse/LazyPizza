@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -30,11 +31,8 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.seno.core.presentation.theme.body_2_regular
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.label_2_semiBold
-import com.seno.core.presentation.theme.primary
-import com.seno.core.presentation.theme.surfaceHighest
-import com.seno.core.presentation.theme.textPrimary
-import com.seno.core.presentation.theme.textSecondary
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -92,7 +90,7 @@ fun DefaultLazyPizzaTextField(
                         .fillMaxWidth()
                         .clip(RoundedCornerShape(16.dp))
                         .background(
-                            color = surfaceHighest,
+                            color = MaterialTheme.customColors.surfaceHighest,
                             shape = RoundedCornerShape(16.dp),
                         ).padding(
                             vertical = 12.dp,
@@ -104,7 +102,7 @@ fun DefaultLazyPizzaTextField(
                             Text(
                                 text = placeholder,
                                 style = body_2_regular,
-                                color = textSecondary,
+                                color = MaterialTheme.customColors.textSecondary,
                             )
                         }
                     }
@@ -112,12 +110,12 @@ fun DefaultLazyPizzaTextField(
                 }
             },
             textStyle = body_2_regular.copy(
-                color = textPrimary,
+                color = MaterialTheme.customColors.textPrimary,
             ),
             keyboardOptions = if (isPhoneNumber) KeyboardOptions(keyboardType = KeyboardType.Phone) else KeyboardOptions(),
             maxLines = 1,
             singleLine = true,
-            cursorBrush = SolidColor(primary),
+            cursorBrush = SolidColor(MaterialTheme.customColors.primary),
         )
 
         AnimatedVisibility(visible = shouldShowSupportingText) {
@@ -131,7 +129,7 @@ fun DefaultLazyPizzaTextField(
                 style = label_2_semiBold.copy(
                     fontWeight = FontWeight.Normal,
                 ),
-                color = textSecondary,
+                color = MaterialTheme.customColors.textSecondary,
             )
         }
     }

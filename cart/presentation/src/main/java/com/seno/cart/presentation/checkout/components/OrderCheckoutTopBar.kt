@@ -10,6 +10,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
 import androidx.compose.runtime.Composable
@@ -19,6 +20,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.seno.core.presentation.components.bar.LazyPizzaTopAppBar
 import com.seno.core.presentation.theme.body_1_medium
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.textSecondary
 import com.seno.core.presentation.theme.textSecondary8
 import com.seno.core.presentation.utils.DeviceConfiguration
@@ -52,7 +54,7 @@ fun OrderCheckoutTopBar(
                         .padding(start = 16.dp)
                         .size(32.dp)
                         .background(
-                            color = textSecondary8.copy(alpha = 0.08f),
+                            color = MaterialTheme.customColors.textSecondary8,
                             shape = RoundedCornerShape(100),
                         ),
                 onClick = { onBackClick() },

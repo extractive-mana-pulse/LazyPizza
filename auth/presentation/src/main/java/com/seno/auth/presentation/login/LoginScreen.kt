@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -24,8 +25,8 @@ import com.seno.core.presentation.components.DefaultLazyPizzaTextField
 import com.seno.core.presentation.components.button.LazyPizzaPrimaryButton
 import com.seno.core.presentation.theme.LazyPizzaTheme
 import com.seno.core.presentation.theme.body_3_regular
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.primary
-import com.seno.core.presentation.theme.textPrimary
 import com.seno.core.presentation.theme.textSecondary
 import com.seno.core.presentation.theme.title_1_medium
 import com.seno.core.presentation.theme.title_3
@@ -49,7 +50,7 @@ fun LoginScreen(
         Text(
             text = "Welcome to LazyPizza",
             style = title_1_medium,
-            color = textPrimary,
+            color = MaterialTheme.customColors.textPrimary,
         )
 
         Spacer(modifier = Modifier.size(6.dp))
@@ -58,13 +59,13 @@ fun LoginScreen(
             Text(
                 text = "Enter code",
                 style = body_3_regular,
-                color = textSecondary,
+                color = MaterialTheme.customColors.textSecondary,
             )
         } else {
             Text(
                 text = "Enter your phone number",
                 style = body_3_regular,
-                color = textSecondary,
+                color = MaterialTheme.customColors.textSecondary,
             )
         }
 
@@ -128,7 +129,7 @@ fun LoginScreen(
                 ),
             text = "Continue without signing in",
             style = title_3,
-            color = primary,
+            color = MaterialTheme.customColors.primary,
         )
         Spacer(modifier = Modifier.size(12.dp))
 

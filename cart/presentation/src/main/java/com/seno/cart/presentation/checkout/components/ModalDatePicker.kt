@@ -6,6 +6,7 @@ import androidx.compose.material3.DatePicker
 import androidx.compose.material3.DatePickerDialog
 import androidx.compose.material3.DisplayMode
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SelectableDates
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -16,10 +17,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.seno.core.presentation.components.button.LazyPizzaPrimaryButton
 import com.seno.core.presentation.theme.LazyPizzaTheme
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.label_2_semiBold
-import com.seno.core.presentation.theme.primary
-import com.seno.core.presentation.theme.textPrimary
-import com.seno.core.presentation.theme.textSecondary
 import com.seno.core.presentation.theme.title_1_semiBold
 import com.seno.core.presentation.theme.title_3
 import com.seno.core.presentation.utils.DeviceConfiguration
@@ -91,7 +90,7 @@ internal fun ModalDatePicker(
             TextButton(onClick = onCancel) {
                 Text(
                     text = "Cancel",
-                    style = title_3.copy(color = primary),
+                    style = title_3.copy(color = MaterialTheme.customColors.primary),
                 )
             }
         },
@@ -102,14 +101,14 @@ internal fun ModalDatePicker(
                 Text(
                     text = "Select date".uppercase(),
                     modifier = Modifier.padding(start = 24.dp, top = 48.dp),
-                    style = label_2_semiBold.copy(color = textSecondary),
+                    style = label_2_semiBold.copy(color = MaterialTheme.customColors.textSecondary),
                 )
             },
             headline = {
                 Text(
                     text = displayDate,
                     modifier = Modifier.padding(start = 24.dp, bottom = 24.dp),
-                    style = title_1_semiBold.copy(color = textPrimary),
+                    style = title_1_semiBold.copy(color = MaterialTheme.customColors.textPrimary),
                 )
             },
         )

@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.RadioButtonDefaults
 import androidx.compose.material3.Text
@@ -20,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import com.seno.core.presentation.theme.body_3_medium
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.outline
 import com.seno.core.presentation.theme.primary
 import com.seno.core.presentation.theme.textPrimary
@@ -47,7 +49,7 @@ internal fun RadioButtonSingleSelection(
                     .padding(vertical = 4.dp)
                     .border(
                         width = 1.dp,
-                        color = outline,
+                        color = MaterialTheme.customColors.outline,
                         shape = CircleShape,
                     ).padding(horizontal = 16.dp)
                     .selectable(
@@ -61,8 +63,8 @@ internal fun RadioButtonSingleSelection(
             ) {
                 RadioButton(
                     colors = RadioButtonDefaults.colors(
-                        selectedColor = primary,
-                        unselectedColor = textSecondary,
+                        selectedColor = MaterialTheme.customColors.primary,
+                        unselectedColor = MaterialTheme.customColors.textSecondary,
                     ),
                     selected = (option == selectedOption),
                     onClick = null,
@@ -70,7 +72,7 @@ internal fun RadioButtonSingleSelection(
                 Text(
                     text = option.text,
                     style = body_3_medium.copy(
-                        color = if (option == selectedOption) textPrimary else textSecondary,
+                        color = if (option == selectedOption) MaterialTheme.customColors.textPrimary else MaterialTheme.customColors.textSecondary,
                     ),
                     modifier = Modifier.padding(start = 16.dp),
                 )

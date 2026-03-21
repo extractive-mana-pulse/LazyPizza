@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SnackbarDuration
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.SnackbarResult
@@ -31,7 +32,7 @@ import com.seno.cart.presentation.checkout.OrderCheckoutRoot
 import com.seno.core.presentation.components.LazyPizzaDefaultScreen
 import com.seno.core.presentation.components.bar.NavigationBarItems
 import com.seno.core.presentation.model.NavigationMenu
-import com.seno.core.presentation.theme.outline
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.utils.DeviceConfiguration
 import com.seno.core.presentation.utils.ObserveAsEvents
 import com.seno.core.presentation.utils.SnackbarController
@@ -116,7 +117,7 @@ fun NavigationRoot(
                     ),
                 )
 
-                VerticalDivider(modifier = Modifier.background(color = outline))
+                VerticalDivider(modifier = Modifier.background(color = MaterialTheme.customColors.outline))
 
                 Box(
                     Modifier

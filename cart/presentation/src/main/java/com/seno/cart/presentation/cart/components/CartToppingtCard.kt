@@ -30,10 +30,8 @@ import com.seno.core.domain.product.ProductType
 import com.seno.core.presentation.R
 import com.seno.core.presentation.model.CartItemUI
 import com.seno.core.presentation.theme.body_1_regular
-import com.seno.core.presentation.theme.outline50
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.primary
-import com.seno.core.presentation.theme.textPrimary
-import com.seno.core.presentation.theme.textSecondary
 import com.seno.core.presentation.theme.title_1_semiBold
 import com.seno.core.presentation.utils.formatToPrice
 
@@ -80,7 +78,7 @@ internal fun CartToppingCard(
 
         Text(
             text = cartItem.name,
-            style = body_1_regular.copy(color = textSecondary),
+            style = body_1_regular.copy(color = MaterialTheme.customColors.textSecondary),
             modifier = Modifier.padding(start = 8.dp, top = 8.dp, bottom = 8.dp),
         )
 
@@ -96,7 +94,7 @@ internal fun CartToppingCard(
                 text = "$${cartItem.price.formatToPrice()}",
                 style =
                     title_1_semiBold.copy(
-                        color = textPrimary,
+                        color = MaterialTheme.customColors.textPrimary,
                     ),
             )
             IconButton(
@@ -106,7 +104,7 @@ internal fun CartToppingCard(
                         .padding(start = 8.dp)
                         .border(
                             width = 1.dp,
-                            color = outline50,
+                            color = MaterialTheme.customColors.outline50,
                             shape = RoundedCornerShape(12.dp),
                         ).padding(4.dp)
                         .size(22.dp),
