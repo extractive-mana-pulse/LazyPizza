@@ -29,7 +29,7 @@ import androidx.compose.ui.unit.dp
 import com.seno.core.presentation.R
 import com.seno.core.presentation.theme.LazyPizzaTheme
 import com.seno.core.presentation.theme.body_1_regular
-import com.seno.core.presentation.theme.textSecondary
+import com.seno.core.presentation.theme.customColors
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -48,7 +48,10 @@ fun CustomizableSearchBar(
         singleLine = true,
         value = query,
         onValueChange = { onQueryChange(it) },
-        textStyle = body_1_regular,
+        textStyle = body_1_regular.copy(
+            color = MaterialTheme.customColors.textPrimary
+        ),
+
         decorationBox = { innerTextField ->
             Box(
                 modifier =
@@ -73,20 +76,20 @@ fun CustomizableSearchBar(
                         modifier = Modifier.size(20.dp),
                         painter = painterResource(R.drawable.search_ic),
                         contentDescription = "Search icon",
-                        tint = MaterialTheme.colorScheme.primary,
+                        tint = MaterialTheme.customColors.primary,
                     )
                     if (query.isEmpty() && !hasFocus) {
                         Text(
                             text = "Search for delicious food...",
                             style = body_1_regular,
-                            color = textSecondary,
+                            color = MaterialTheme.customColors.textSecondary,
                         )
                     }
                     innerTextField()
                 }
             }
         },
-        cursorBrush = SolidColor(MaterialTheme.colorScheme.primary),
+        cursorBrush = SolidColor(MaterialTheme.customColors.primary),
     )
 }
 

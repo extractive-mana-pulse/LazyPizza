@@ -36,6 +36,7 @@ import com.seno.core.presentation.components.LoadingComponent
 import com.seno.core.presentation.components.button.LazyPizzaPrimaryButton
 import com.seno.core.presentation.components.card.ProductCard
 import com.seno.core.presentation.theme.LazyPizzaTheme
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.label_2_semiBold
 import com.seno.core.presentation.theme.surfaceHigher
 import com.seno.core.presentation.theme.textSecondary
@@ -137,7 +138,7 @@ private fun TabletCartScreenUI(
                         Modifier
                             .weight(1f)
                             .background(
-                                color = surfaceHigher,
+                                color = MaterialTheme.customColors.surfaceHigher,
                                 shape = RoundedCornerShape(16.dp),
                             ).padding(16.dp),
                     verticalArrangement = Arrangement.SpaceBetween,
@@ -148,7 +149,7 @@ private fun TabletCartScreenUI(
                         Column {
                             Text(
                                 text = stringResource(R.string.recommended_title).uppercase(),
-                                style = label_2_semiBold.copy(color = textSecondary),
+                                style = label_2_semiBold.copy(color = MaterialTheme.customColors.textSecondary),
                                 modifier = Modifier.padding(bottom = 8.dp),
                             )
                             LazyRow(
@@ -276,7 +277,7 @@ private fun MobileCartScreenUI(
                                 text = stringResource(R.string.recommended_title).uppercase(),
                                 style =
                                     label_2_semiBold.copy(
-                                        color = textSecondary,
+                                        color = MaterialTheme.customColors.textSecondary,
                                     ),
                                 modifier =
                                     Modifier

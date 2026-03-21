@@ -37,6 +37,7 @@ import com.seno.core.presentation.components.button.LazyPizzaSecondaryButton
 import com.seno.core.presentation.theme.body_1_medium
 import com.seno.core.presentation.theme.body_3_regular
 import com.seno.core.presentation.theme.body_4_regular
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.outline50
 import com.seno.core.presentation.theme.textPrimary
 import com.seno.core.presentation.theme.textSecondary
@@ -100,7 +101,7 @@ fun ProductCard(
             ) {
                 Text(
                     text = productName,
-                    style = body_1_medium.copy(color = textPrimary),
+                    style = body_1_medium.copy(color = MaterialTheme.customColors.textPrimary),
                 )
 
                 if (quantity > 0) {
@@ -111,7 +112,7 @@ fun ProductCard(
                                 .padding(end = 8.dp)
                                 .border(
                                     width = 1.dp,
-                                    color = outline50,
+                                    color = MaterialTheme.customColors.outline50,
                                     shape = RoundedCornerShape(12.dp),
                                 ).padding(4.dp)
                                 .size(22.dp),
@@ -147,7 +148,7 @@ fun ProductCard(
                 if (quantity == 0) {
                     Text(
                         text = "$${productPrice.formatToPrice()}",
-                        style = title_1_semiBold.copy(color = textPrimary),
+                        style = title_1_semiBold.copy(color = MaterialTheme.customColors.textPrimary),
                     )
 
                     LazyPizzaSecondaryButton(
@@ -163,7 +164,7 @@ fun ProductCard(
                                     .padding(end = 8.dp)
                                     .border(
                                         width = 1.dp,
-                                        color = outline50,
+                                        color = MaterialTheme.customColors.outline50,
                                         shape = RoundedCornerShape(12.dp),
                                     ).padding(4.dp)
                                     .size(22.dp),
@@ -188,7 +189,7 @@ fun ProductCard(
                                     .padding(start = 8.dp)
                                     .border(
                                         width = 1.dp,
-                                        color = outline50,
+                                        color = MaterialTheme.customColors.outline50,
                                         shape = RoundedCornerShape(12.dp),
                                     ).padding(4.dp)
                                     .size(22.dp),
@@ -204,7 +205,7 @@ fun ProductCard(
                     Column(horizontalAlignment = Alignment.End) {
                         Text(
                             text = "$${(productPrice * quantity).formatToPrice()}",
-                            style = title_1_semiBold.copy(color = textPrimary),
+                            style = title_1_semiBold.copy(color = MaterialTheme.customColors.textPrimary),
                         )
                         Text(
                             text = "$quantity x $${productPrice.formatToPrice()}",

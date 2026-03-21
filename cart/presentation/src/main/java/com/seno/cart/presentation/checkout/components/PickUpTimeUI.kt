@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import com.seno.cart.presentation.R
 import com.seno.cart.presentation.checkout.OrderCheckoutActions
 import com.seno.cart.presentation.checkout.OrderCheckoutState
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.label_2_semiBold
 import com.seno.core.presentation.theme.outline
 import com.seno.core.presentation.theme.textPrimary
@@ -37,7 +38,7 @@ internal fun PickUpTimeUI(
         Text(
             text = stringResource(R.string.pickup_time),
             style = label_2_semiBold,
-            color = textSecondary,
+            color = MaterialTheme.customColors.textSecondary,
         )
 
         Spacer(modifier = Modifier.height(8.dp))
@@ -64,18 +65,18 @@ internal fun PickUpTimeUI(
                 } else {
                     stringResource(R.string.scheduled_time)
                 },
-                style = MaterialTheme.typography.labelSmall.copy(color = textSecondary),
+                style = MaterialTheme.typography.labelSmall.copy(color = MaterialTheme.customColors.textSecondary),
             )
 
             Text(
                 text = state.displayPickupTime,
-                style = label_2_semiBold.copy(color = textPrimary),
+                style = label_2_semiBold.copy(color = MaterialTheme.customColors.textPrimary),
             )
         }
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        HorizontalDivider(thickness = 1.dp, color = outline)
+        HorizontalDivider(thickness = 1.dp, color = MaterialTheme.customColors.outline)
     }
 
     if (state.showDatePicker) {

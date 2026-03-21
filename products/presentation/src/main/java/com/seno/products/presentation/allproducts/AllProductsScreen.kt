@@ -17,6 +17,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
 import androidx.compose.runtime.Composable
@@ -29,9 +30,8 @@ import com.seno.core.domain.product.ProductType
 import com.seno.core.presentation.components.card.PizzaCard
 import com.seno.core.presentation.components.card.ProductCard
 import com.seno.core.presentation.theme.LazyPizzaTheme
-import com.seno.core.presentation.theme.background
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.label_2_semiBold
-import com.seno.core.presentation.theme.textSecondary
 import com.seno.core.presentation.utils.DeviceConfiguration
 import com.seno.core.presentation.utils.replaceUnderscores
 import com.seno.products.presentation.allproducts.component.AllProductsHeader
@@ -138,14 +138,14 @@ fun AllProductsScreen(
                                 modifier =
                                     Modifier
                                         .fillMaxWidth()
-                                        .background(color = background)
+                                        .background(color = MaterialTheme.customColors.background)
                                         .padding(vertical = 8.dp),
                             ) {
                                 Text(
                                     text = type.name.replaceUnderscores(),
                                     style =
                                         label_2_semiBold.copy(
-                                            color = textSecondary,
+                                            color = MaterialTheme.customColors.textSecondary,
                                         ),
                                 )
                             }

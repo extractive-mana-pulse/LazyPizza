@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -20,8 +21,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.seno.core.presentation.model.NavigationMenu
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.primary
-import com.seno.core.presentation.theme.textPrimary
 import com.seno.core.presentation.theme.textSecondary
 import com.seno.core.presentation.theme.title_4
 
@@ -75,7 +76,7 @@ fun NavigationBarItem(
         Text(
             text = navigationMenu.title,
             style = title_4,
-            color = if (isSelected) textPrimary else textSecondary,
+            color = if (isSelected) MaterialTheme.customColors.textPrimary else MaterialTheme.customColors.textSecondary,
         )
     }
 }

@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -20,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.seno.core.presentation.theme.body_2_regular
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.label_2_semiBold
 import com.seno.core.presentation.theme.surfaceHighest
 import com.seno.core.presentation.theme.textPrimary
@@ -40,7 +42,7 @@ fun CommentsUI(
         Text(
             text = "COMMENTS",
             style = label_2_semiBold,
-            color = textSecondary,
+            color = MaterialTheme.customColors.textSecondary,
         )
 
         Spacer(modifier = Modifier.height(8.dp))
@@ -52,13 +54,13 @@ fun CommentsUI(
             value = value,
             onValueChange = onValueChange,
             textStyle = body_2_regular.copy(
-                color = textPrimary,
+                color = MaterialTheme.customColors.textPrimary,
             ),
             decorationBox = { innerTextField ->
                 Box(
                     modifier = Modifier
                         .background(
-                            color = surfaceHighest,
+                            color = MaterialTheme.customColors.surfaceHighest,
                             shape = RoundedCornerShape(16.dp),
                         ).padding(
                             vertical = 13.dp,
@@ -69,7 +71,7 @@ fun CommentsUI(
                         Text(
                             text = "Add Comment",
                             style = body_2_regular,
-                            color = textSecondary,
+                            color = MaterialTheme.customColors.textSecondary,
                         )
                     }
                     innerTextField()

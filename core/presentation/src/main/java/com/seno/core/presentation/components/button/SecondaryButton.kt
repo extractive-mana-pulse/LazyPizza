@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.seno.core.presentation.theme.LazyPizzaTheme
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.primary
 import com.seno.core.presentation.theme.primary8
 import com.seno.core.presentation.theme.title_3
@@ -28,17 +29,17 @@ fun LazyPizzaSecondaryButton(
         border =
             BorderStroke(
                 width = 1.dp,
-                color = primary8,
+                color = MaterialTheme.customColors.primary8,
             ),
         colors =
             ButtonDefaults.outlinedButtonColors(
-                containerColor = MaterialTheme.colorScheme.background,
+                containerColor = MaterialTheme.customColors.background,
             ),
     ) {
         Text(
             text = buttonText,
             style = title_3,
-            color = primary,
+            color = MaterialTheme.customColors.primary,
         )
     }
 }

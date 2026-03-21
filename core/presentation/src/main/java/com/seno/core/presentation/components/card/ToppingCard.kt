@@ -34,6 +34,7 @@ import coil.compose.AsyncImage
 import com.seno.core.presentation.R
 import com.seno.core.presentation.theme.LazyPizzaTheme
 import com.seno.core.presentation.theme.body_3_regular
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.outline50
 import com.seno.core.presentation.theme.primary
 import com.seno.core.presentation.theme.primary8
@@ -58,7 +59,7 @@ fun ToppingCard(
                 .fillMaxWidth()
                 .border(
                     width = 1.dp,
-                    color = if (quantity > 0) primary else outline50,
+                    color = if (quantity > 0) MaterialTheme.customColors.primary else MaterialTheme.customColors.outline50,
                     shape = RoundedCornerShape(12.dp),
                 ).background(
                     color = MaterialTheme.colorScheme.surfaceContainerHigh,
@@ -73,7 +74,7 @@ fun ToppingCard(
                 Modifier
                     .size(64.dp)
                     .background(
-                        color = primary8.copy(alpha = 0.08f),
+                        color = MaterialTheme.customColors.primary8,
                         shape = RoundedCornerShape(100),
                     ),
             contentAlignment = Alignment.Center,
@@ -90,7 +91,7 @@ fun ToppingCard(
 
         Text(
             text = toppingName,
-            style = body_3_regular.copy(color = textSecondary),
+            style = body_3_regular.copy(color = MaterialTheme.customColors.textSecondary),
         )
 
         Box(
@@ -103,7 +104,7 @@ fun ToppingCard(
             if (quantity == 0) {
                 Text(
                     text = "$${toppingPrice.formatToPrice()}",
-                    style = title_2.copy(color = textPrimary),
+                    style = title_2.copy(color = MaterialTheme.customColors.textPrimary),
                 )
             } else {
                 Row(
@@ -118,7 +119,7 @@ fun ToppingCard(
                                 .padding(end = 8.dp)
                                 .border(
                                     width = 1.dp,
-                                    color = outline50,
+                                    color = MaterialTheme.customColors.outline50,
                                     shape = RoundedCornerShape(12.dp),
                                 ).padding(4.dp)
                                 .size(22.dp),
@@ -149,7 +150,7 @@ fun ToppingCard(
                                 .padding(start = 8.dp)
                                 .border(
                                     width = 1.dp,
-                                    color = outline50,
+                                    color = MaterialTheme.customColors.outline50,
                                     shape = RoundedCornerShape(12.dp),
                                 ).padding(4.dp)
                                 .size(22.dp),

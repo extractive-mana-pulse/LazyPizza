@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -20,9 +21,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import com.seno.core.presentation.R
-import com.seno.core.presentation.theme.primary
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.primaryGradient
-import com.seno.core.presentation.theme.textOnPrimary
 import com.seno.core.presentation.theme.title_1_medium
 import com.seno.core.presentation.theme.title_3
 
@@ -62,7 +62,7 @@ fun LogoutConfirmationDialog(
                         Text(
                             text = stringResource(R.string.cancel),
                             style = title_3.copy(
-                                color = primary,
+                                color = MaterialTheme.customColors.primary,
                             ),
                         )
                     }
@@ -78,7 +78,7 @@ fun LogoutConfirmationDialog(
                         Text(
                             text = stringResource(R.string.logout),
                             style = title_3.copy(
-                                color = textOnPrimary,
+                                color = MaterialTheme.customColors.textOnPrimary,
                             ),
                         )
                     }

@@ -15,7 +15,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.seno.core.presentation.circleGradientShadow
 import com.seno.core.presentation.theme.LazyPizzaTheme
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.textOnPrimary
+import com.seno.core.presentation.theme.textPrimary
 import com.seno.core.presentation.theme.title_3
 
 @Composable

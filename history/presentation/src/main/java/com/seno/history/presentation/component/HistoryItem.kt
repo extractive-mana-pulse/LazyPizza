@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -22,6 +23,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.seno.core.presentation.theme.LazyPizzaTheme
 import com.seno.core.presentation.theme.body_4_regular
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.label_3_medium
 import com.seno.core.presentation.theme.surfaceHigher
 import com.seno.core.presentation.theme.textOnPrimary
@@ -35,7 +37,7 @@ import com.seno.history.presentation.OrderItem
 fun HistoryItem(orderItem: OrderItem) {
     ElevatedCard(
         colors = CardDefaults.elevatedCardColors(
-            containerColor = surfaceHigher,
+            containerColor = MaterialTheme.customColors.surfaceHigher,
         ),
         elevation = CardDefaults.elevatedCardElevation(
             defaultElevation = 2.dp,
@@ -54,7 +56,7 @@ fun HistoryItem(orderItem: OrderItem) {
                 Text(
                     text = "Order ${orderItem.id}",
                     style = title_3,
-                    color = textPrimary,
+                    color = MaterialTheme.customColors.textPrimary,
                 )
                 Text(
                     text = orderItem.date.toPlaceOrderPickupTime(),
@@ -98,7 +100,7 @@ fun HistoryItem(orderItem: OrderItem) {
                     Text(
                         text = orderItem.status.description,
                         style = label_3_medium,
-                        color = textOnPrimary,
+                        color = MaterialTheme.customColors.textOnPrimary,
                     )
                 }
 
@@ -108,13 +110,13 @@ fun HistoryItem(orderItem: OrderItem) {
                     Text(
                         text = "Total amount",
                         style = body_4_regular,
-                        color = textSecondary,
+                        color = MaterialTheme.customColors.textSecondary,
                     )
 
                     Text(
                         text = "$${orderItem.totalPrice}",
                         style = title_3,
-                        color = textPrimary,
+                        color = MaterialTheme.customColors.textPrimary,
                     )
                 }
             }

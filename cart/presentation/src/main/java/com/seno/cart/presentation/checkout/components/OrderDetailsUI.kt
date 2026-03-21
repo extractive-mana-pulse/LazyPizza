@@ -16,6 +16,7 @@ import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -29,6 +30,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.seno.core.presentation.components.card.ProductCard
 import com.seno.core.presentation.model.CartItemUI
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.label_2_semiBold
 import com.seno.core.presentation.theme.outline
 import com.seno.core.presentation.theme.outline50
@@ -54,7 +56,7 @@ internal fun OrderDetailsUI(
             Text(
                 text = "ORDER DETAILS",
                 style = label_2_semiBold,
-                color = textSecondary,
+                color = MaterialTheme.customColors.textSecondary,
             )
 
             Spacer(modifier = Modifier.weight(1f))
@@ -66,7 +68,7 @@ internal fun OrderDetailsUI(
                     .border(
                         width = 1.dp,
                         shape = RoundedCornerShape(8.dp),
-                        color = outline50,
+                        color = MaterialTheme.customColors.outline50,
                     ).clickable(
                         enabled = cartItems.isNotEmpty(),
                         onClick = {
@@ -120,7 +122,7 @@ internal fun OrderDetailsUI(
 
         Spacer(modifier = Modifier.height(8.dp))
 
-        HorizontalDivider(thickness = 1.dp, color = outline)
+        HorizontalDivider(thickness = 1.dp, color = MaterialTheme.customColors.outline)
     }
 }
 

@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.seno.core.presentation.components.button.LazyPizzaPrimaryButton
 import com.seno.core.presentation.theme.LazyPizzaTheme
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.label_2_semiBold
 import com.seno.core.presentation.theme.outline
 import com.seno.core.presentation.theme.primary
@@ -66,14 +67,14 @@ fun InputTimePicker(
             modifier = Modifier
                 .width(264.dp),
             shape = RoundedCornerShape(28.dp),
-            color = surfaceHigher,
+            color = MaterialTheme.customColors.surfaceHigher,
         ) {
             Column {
                 // Title
                 Text(
                     text = "Select Time".uppercase(),
                     modifier = Modifier.padding(16.dp),
-                    style = label_2_semiBold.copy(color = textSecondary),
+                    style = label_2_semiBold.copy(color = MaterialTheme.customColors.textSecondary),
                 )
 
                 // Time Input
@@ -83,9 +84,9 @@ fun InputTimePicker(
                         .padding(horizontal = 16.dp),
                     state = timePickerState,
                     colors = TimePickerDefaults.colors(
-                        containerColor = surfaceHighest,
-                        timeSelectorSelectedContainerColor = surfaceHigher,
-                        timeSelectorUnselectedContainerColor = surfaceHighest,
+                        containerColor = MaterialTheme.customColors.surfaceHighest,
+                        timeSelectorSelectedContainerColor = MaterialTheme.customColors.surfaceHighest,
+                        timeSelectorUnselectedContainerColor = MaterialTheme.customColors.surfaceHighest,
                     ),
                 )
 
@@ -95,7 +96,7 @@ fun InputTimePicker(
                     Text(
                         text = validationError,
                         style = MaterialTheme.typography.bodySmall.copy(
-                            color = primary,
+                            color = MaterialTheme.customColors.primary,
                             fontSize = 12.sp,
                             lineHeight = 16.sp,
                             fontWeight = FontWeight.Medium,
@@ -106,7 +107,7 @@ fun InputTimePicker(
                             .align(Alignment.Start),
                     )
                     Spacer(modifier = Modifier.height(12.dp))
-                    HorizontalDivider(thickness = 1.dp, color = outline)
+                    HorizontalDivider(thickness = 1.dp, color = MaterialTheme.customColors.outline)
                 }
 
                 // Action Buttons
@@ -120,7 +121,7 @@ fun InputTimePicker(
                     ) {
                         Text(
                             text = "Cancel",
-                            style = title_3.copy(color = primary),
+                            style = title_3.copy(color = MaterialTheme.customColors.primary),
                         )
                     }
 

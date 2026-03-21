@@ -7,6 +7,7 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -17,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import com.seno.core.presentation.theme.LazyPizzaTheme
 import com.seno.core.presentation.theme.background
 import com.seno.core.presentation.theme.body_3_medium
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.outline
 import com.seno.core.presentation.theme.textPrimary
 
@@ -29,10 +31,10 @@ fun ProductChip(
     Box(
         modifier =
             modifier
-                .background(color = background)
+                .background(color = MaterialTheme.customColors.background)
                 .border(
                     width = 1.dp,
-                    color = outline,
+                    color = MaterialTheme.customColors.outline,
                     shape = RoundedCornerShape(12.dp),
                 ).clickable(
                     indication = null,
@@ -46,7 +48,7 @@ fun ProductChip(
     ) {
         Text(
             text = chipText,
-            style = body_3_medium.copy(color = textPrimary),
+            style = body_3_medium.copy(color = MaterialTheme.customColors.textPrimary),
         )
     }
 }

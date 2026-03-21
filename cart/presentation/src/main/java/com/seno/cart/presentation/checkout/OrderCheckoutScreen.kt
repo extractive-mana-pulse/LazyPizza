@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
 import androidx.compose.runtime.Composable
@@ -30,6 +31,7 @@ import com.seno.cart.presentation.checkout.components.PickUpTimeUI
 import com.seno.cart.presentation.checkout.components.RecommendedAddOnsUI
 import com.seno.core.presentation.components.button.LazyPizzaPrimaryButton
 import com.seno.core.presentation.theme.background
+import com.seno.core.presentation.theme.customColors
 import com.seno.core.presentation.theme.surfaceHigher
 import com.seno.core.presentation.utils.DeviceConfiguration
 import com.seno.core.presentation.utils.toPlaceOrderPickupTime
@@ -56,12 +58,12 @@ fun OrderCheckoutScreen(
     }
 
     Scaffold(
-        containerColor = background,
+        containerColor = MaterialTheme.customColors.background,
         topBar = {
             OrderCheckoutTopBar(
                 modifier = Modifier
                     .background(
-                        color = surfaceHigher,
+                        color = MaterialTheme.customColors.surfaceHigher,
                         shape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp),
                     ),
                 onBackClick = { onAction(OrderCheckoutActions.OnBackClick) },
