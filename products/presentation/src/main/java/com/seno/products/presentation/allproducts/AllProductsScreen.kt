@@ -44,7 +44,7 @@ fun AllProductsScreen(
     modifier: Modifier = Modifier,
     state: AllProductsState = AllProductsState(),
     onAction: (AllProductsAction) -> Unit = {},
-    listState: LazyListState
+    listState: LazyListState,
 ) {
     val coroutineScope = rememberCoroutineScope()
     val windowSizeClass = currentWindowAdaptiveInfo().windowSizeClass
@@ -80,21 +80,6 @@ fun AllProductsScreen(
             modifier = Modifier
                 .padding(horizontal = 16.dp),
         ) {
-            if (deviceType != DeviceConfiguration.MOBILE_LANDSCAPE) {
-                AllProductsHeader(
-                    searchQuery = state.searchQuery,
-                    onQueryChange = {
-                        onAction(AllProductsAction.OnQueryChange(it))
-                    },
-                    onChipClick = {
-                        coroutineScope.launch {
-                            listState.animateScrollToItem(
-                                state.headerIndexMap[it] ?: 0,
-                            )
-                        }
-                    },
-                )
-            }
 
             if (state.products.isEmpty()) {
                 Column(
@@ -115,22 +100,20 @@ fun AllProductsScreen(
                     state = listState,
                     verticalArrangement = Arrangement.spacedBy(8.dp),
                 ) {
-                    if (deviceType == DeviceConfiguration.MOBILE_LANDSCAPE) {
-                        item {
-                            AllProductsHeader(
-                                searchQuery = state.searchQuery,
-                                onQueryChange = {
-                                    onAction(AllProductsAction.OnQueryChange(it))
-                                },
-                                onChipClick = {
-                                    coroutineScope.launch {
-                                        listState.animateScrollToItem(
-                                            state.headerIndexMap[it] ?: 0,
-                                        )
-                                    }
-                                },
-                            )
-                        }
+                    item {
+                        AllProductsHeader(
+                            searchQuery = state.searchQuery,
+                            onQueryChange = {
+                                onAction(AllProductsAction.OnQueryChange(it))
+                            },
+                            onChipClick = {
+                                coroutineScope.launch {
+                                    listState.animateScrollToItem(
+                                        state.headerIndexMap[it] ?: 0,
+                                    )
+                                }
+                            },
+                        )
                     }
                     state.productsFiltered.forEach { (type, products) ->
                         stickyHeader {
