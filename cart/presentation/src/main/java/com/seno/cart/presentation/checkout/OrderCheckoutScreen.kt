@@ -118,7 +118,7 @@ fun OrderCheckoutScreen(
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(surfaceHigher)
+                    .background(MaterialTheme.customColors.surfaceHigher)
                     .padding(paddingValues)
                     .verticalScroll(rememberScrollState())
                     .padding(horizontal = 16.dp),
